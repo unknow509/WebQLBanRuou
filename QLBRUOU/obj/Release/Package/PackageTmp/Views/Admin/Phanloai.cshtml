@@ -1,0 +1,61 @@
+﻿@model PagedList.PagedList<QLBRUOU.Models.PHANLOAI>
+@using PagedList;
+@using QLBRUOU.Models;
+@using PagedList.Mvc
+
+<!-- using Helper HTML to cut to shorter description -->
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+@{
+    ViewBag.Title = "Phân loại";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN PHÂN LOẠI</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "themmoipl")
+</p>
+<table class="table" border="1px">
+    <tr>
+        <th style="width: 300px">Tên loại rượu</th>
+        <th>Chức năng</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => @item.Loairuou)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Suapl", new { id = item.MaLoaiRuou }) |
+                @Html.ActionLink("Xóa", "xoapl", new { id = item.MaLoaiRuou })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@* Making page list *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Phanloai", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+
+

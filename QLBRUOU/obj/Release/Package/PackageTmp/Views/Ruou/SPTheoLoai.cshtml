@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "SPTheoLoai";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style>
+    .col-md-3.caption {
+        margin-top: 3%;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3 caption">
+        <div class="nn-product-box">
+            <a href="@Url.Action("ChiTietSP", "Ruou", new {id = item.MaRuou})">
+                <img class="img-responsive img_anhruou" src="/Images/@item.AnhRuou">
+            </a>
+            <div class="nn-product-box-descriptions">
+                <h3 class="nn-product-box-name">
+                    <a href="@Url.Action("ChiTietSP", "Ruou", new {id = item.MaRuou})">@item.TenRuou</a>
+                </h3>
+                <div class="nn-product-box-price ">
+                    <span class="">@item.Giaban VNĐ</span>
+                </div>
+                <div class="nn-product-box-actions">
+                    <a href="@Url.Action("ThemGiohang", "Giohang", new {id = item.MaRuou})" class="btn btn-success btn-block">
+                        Thêm vào giỏ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

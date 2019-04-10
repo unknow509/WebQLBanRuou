@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.75" name="dbQLBANRUOU">
+  <DataContextMoniker Name="/dbQLBANRUOUDataContext" />
+  <nestedChildShapes>
+    <classShape Id="22d22f14-a50b-429c-8c46-81d7a16e2191" absoluteBounds="3.75, 4.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6ef9bea-764f-411a-aa9b-677008c01335" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb178a6b-24db-43b1-8848-327adf308266" absoluteBounds="0.75, 4.25, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/XUATXU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39d6b128-1505-4837-ac46-69bf393b9fad" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b024c55f-3a9e-469a-9d8c-db6af6e95684" absoluteBounds="6.25, 1.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/CHITIETDONTHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca48c5c5-516e-4919-ba35-fa730fc5f3bc" absoluteBounds="6.265, 1.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b2946eb7-80f5-4f69-8e37-e4852fefbd75" absoluteBounds="3.5, 9.375, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d63f8d8-a80d-4679-9811-08c52fbd8664" absoluteBounds="3.515, 9.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38478587-8c5b-41ec-b604-44800f104209" absoluteBounds="0.75, 9.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0b79929-d38d-4343-ae05-c393e5d8ecfe" absoluteBounds="0.765, 9.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e08bb61-2e7e-40a8-9280-d55454468dfa" absoluteBounds="0.75, 6.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/NHACUNGCAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4b425e2-f7f7-4950-b9b7-68d989c32b06" absoluteBounds="0.765, 6.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0cd8068-317a-49e0-bf6e-c3b0b0476f5a" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/PHANLOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1acf947e-ce05-49a0-9bc9-62da415b0db1" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec3044a9-7fcc-4a96-a0a4-871fccaf86f9" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbQLBANRUOUDataContext/RUOU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1893f6fe-dac2-483e-a4f2-8368e08888ab" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 10.3565991210937); (7.25 : 10.3565991210937); (7.25 : 3.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/DONDATHANG/DONDATHANG_CHITIETDONTHANG" />
+      <nodes>
+        <classShapeMoniker Id="b2946eb7-80f5-4f69-8e37-e4852fefbd75" />
+        <classShapeMoniker Id="b024c55f-3a9e-469a-9d8c-db6af6e95684" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.3565991210937); (3.5 : 10.3565991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="38478587-8c5b-41ec-b604-44800f104209" />
+        <classShapeMoniker Id="b2946eb7-80f5-4f69-8e37-e4852fefbd75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.28929768880208); (6.25 : 2.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/RUOU/RUOU_CHITIETDONTHANG" />
+      <nodes>
+        <classShapeMoniker Id="ec3044a9-7fcc-4a96-a0a4-871fccaf86f9" />
+        <classShapeMoniker Id="b024c55f-3a9e-469a-9d8c-db6af6e95684" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.03929768880208); (3.59375 : 7.03929768880208); (3.59375 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/NHACUNGCAP/NHACUNGCAP_RUOU" />
+      <nodes>
+        <classShapeMoniker Id="6e08bb61-2e7e-40a8-9280-d55454468dfa" />
+        <classShapeMoniker Id="ec3044a9-7fcc-4a96-a0a4-871fccaf86f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/PHANLOAI/PHANLOAI_RUOU" />
+      <nodes>
+        <classShapeMoniker Id="d0cd8068-317a-49e0-bf6e-c3b0b0476f5a" />
+        <classShapeMoniker Id="ec3044a9-7fcc-4a96-a0a4-871fccaf86f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.46875); (3.5624975 : 4.46875); (3.5624975 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLBANRUOUDataContext/XUATXU/XUATXU_RUOU" />
+      <nodes>
+        <classShapeMoniker Id="eb178a6b-24db-43b1-8848-327adf308266" />
+        <classShapeMoniker Id="ec3044a9-7fcc-4a96-a0a4-871fccaf86f9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

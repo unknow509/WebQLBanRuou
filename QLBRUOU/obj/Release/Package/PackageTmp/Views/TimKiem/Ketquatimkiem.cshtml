@@ -1,0 +1,60 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.IPagedList<QLBRUOU.Models.RUOU>
+
+@{
+    ViewBag.Title = "Ketquatimkiem";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style>
+    .MenuTrang {
+        clear: both;
+    }
+
+        .MenuTrang li {
+            display: inline;
+        }
+
+    ul.thumbnails div.thumbnails {
+        padding-left: 7%;
+    }
+</style>
+
+<div class="nn-block-margin-top30px">
+    <div class="nn-cat-title">
+        <p>
+            <h2 style="text-align:center">KẾT QUẢ TÌM KIẾM</h2>
+            <h4 style="text-align:center">@ViewBag.ThongBao</h4>
+        </p>
+    </div>
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 caption">
+                <div class="nn-product-box">
+                    <a href="@Url.Action("ChiTietSP", "Ruou", new {id = item.MaRuou})">
+                        <img class="img-responsive img_anhruou" src="/Images/@item.AnhRuou">
+                    </a>
+                    <div class="nn-product-box-descriptions">
+                        <h3 class="nn-product-box-name">
+                            <a href="http://newsmartwave.net/magento/legenda/index.php/fashion-jacket-386.html">@item.TenRuou</a>
+                        </h3>
+                        <div class="nn-product-box-price ">
+                            <span class="">@item.Giaban VNĐ</span>
+                        </div>
+                        <div class="nn-product-box-actions">
+                            <a href="@Url.Action("ThemGiohang", "Giohang", new {id = item.MaRuou})" class="btn btn-success btn-block">
+                                Thêm vào giỏ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Ketquatimkiem", new { page = page, @sTuKhoa = ViewBag.Tukhoa }))
+</div>

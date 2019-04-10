@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cửa hàng rượu</title>
+    <link href="~/Images/logo.png" rel="shortcut icon" type="image/x-icon">
+    <!--jquery first, bootstrap later-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/nn-style.css" rel="stylesheet">
+    <style>
+        .nn-megamenu-sidebar-title {
+                background-color: #21dab8f2;
+                border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="nn-header">        
+                <img src="~/Images/cover.png" class="img-responsive" />
+        </header>
+        <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".js-navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> 
+                    <a href="@Url.Action("Index","Ruou")" class="navbar-brand"><span class="glyphicon glyphicon-home "></span></a>      
+                </div>            
+                <div class="collapse navbar-collapse js-navbar-collapse">     
+                    <ul class="nav navbar-nav navbar-left" style="margin-top: 8px">
+                        <li>
+                            @using (Html.BeginForm("Ketquatimkiem", "Timkiem", FormMethod.Post))
+                            {
+                                <input type="text" class="form-control" placeholder="Tìm sản phẩm" name="txtTimKiem" style="display: inline;width: 65%;">
+                                <input type="submit" class="form-control btn btn-primary" value="Tìm Kiếm" style="display:inline;width:30%;"/>
+                            }
+
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">                      
+                       <li><a href="@Url.Action("Index","Ruou")"><span class="glyphicon glyphicon-briefcase "></span>Sản phẩm</a></li>
+                       <li><a href="@Url.Action("Index","Lienhe")"><span class="glyphicon glyphicon-globe "></span>Địa chỉ - Liên hệ</a></li>  
+                       <li>@Html.Action("GiohangPartial", "Giohang")</li>
+                       <li><a href="@Url.Action("Dangky", "Nguoidung")"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                       <li>
+                           @{
+                               if (@Session["Taikhoan"] == null || @Session["Taikhoan"].ToString() == "")
+                               {
+                                <a href="@Url.Action("Dangnhap", "Nguoidung")"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a>
+                               }
+                               else
+                               {
+                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-weight:600">
+                                       Chào mừng - @Session["HoTenUser"]
+                                       <span class="caret"></span>
+                                   </a>
+                                       <ul class="dropdown-menu">
+                                           <li><a href="#">Thông tin cá nhân</a></li>
+                                           <li><a href="#">Đổi mật khẩu</a></li>
+                                           <li><a href="@Url.Action("Dangxuat", "Nguoidung")">Đăng Xuất</a></li>
+                                       </ul>
+                               }
+                           }
+                       </li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-3 col-sm-3 col-lg-3 col-xs-12" id="chame_collapse">
+                <div class="nn-block">
+                    <div class="nn-megamenu-sidebar-title" data-toggle="collapse" data-parent="#chame_collapse" href="#collapse1">
+                            <i class="glyphicon glyphicon-list-alt"></i><h2>Loại rượu</h2>
+                    </div>
+                    <div class="collapse in" id="collapse1">
+                        @Html.Action("Loairuou", "Ruou")
+                    </div>
+                </div>
+        
+                <div class="nn-block">
+                    <div class="nn-megamenu-sidebar-title" data-toggle="collapse" data-parent="#chame_collapse" href="#collapse2">
+                            <i class="glyphicon glyphicon-list-alt"></i><h2>Xuất xứ</h2>
+                    </div>
+                    <div class="collapse" id="collapse2">
+                        @Html.Action("xuatxu", "Ruou")
+                    </div>
+                </div>
+
+                <div class="nn-block">
+                    <div class="nn-megamenu-sidebar-title" data-toggle="collapse" data-parent="#chame_collapse" href="#collapse3">
+                            <i class="glyphicon glyphicon-list-alt"></i><h2>Nhà Cung Cấp</h2>
+                    </div>
+                    <div class="collapse" id="collapse3">
+                        @Html.Action("nhacungcap", "Ruou")
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                <div class="nn-home-banner">
+                    <img src="/Images/home-banner03.jpg" class="img-responsive" />
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+        <div class="ma-footer-static">
+            <div class="container">
+                <div class="footer-static">
+                    <div class="row" style="text-align:center;text-decoration:none;background-color:#21dab8f2">                   
+                            <div class="footer-static-title">
+                                <h3>ĐỒ ÁN LẬP TRÌNH WEB</h3>
+                            </div>
+                            <div class="footer-static-content">
+                                <ul>
+                                    <p>GIẢNG VIÊN HƯỚNG DẪN : Ths.Dương Thành Phết</p>
+                                    <p>NHÓM SV THỰC HIỆN: Quang Khánh - Quang Mẫn -Nho Báo</p>
+                                    <p>LỚP: 16DTHC2</p>
+                                </ul>
+                            </div>                   
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5ae6a85cde20620011e034fd&product=custom-share-buttons"></script>
+
+</body>
+</html>

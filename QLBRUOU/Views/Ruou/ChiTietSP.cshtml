@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    img#hienthi_anhruou {
+        width: 50% !important;
+    }
+    a.btn.btn-success.btn-block{
+        width:30% !important;
+    }
+</style>
+
+<h2 style="text-align: center; color: orangered">CHI TIẾT RƯỢU</h2>
+
+<div class="row">
+    <div class="span2" style="margin-left: 10%;">
+        <img src="~/images/@Model.AnhRuou" alt="" id="hienthi_anhruou"/>
+    </div>
+    <div class="span5">
+        <h3 style="color: orangered">Tên rượu: @Model.TenRuou </h3>
+        <p><span style="font-weight: bold">Mô tả: </span>@Model.Mota</p>
+        <p style="font-weight: bold">Giá bán: <span style="color: orangered; font-weight: bold; font-size: 16px">@Model.Giaban VNĐ</span></p>
+        <p></p>
+    </div>
+    <div class="nn-product-box-actions">
+        <a href="@Url.Action("ThemGiohang", "Giohang", new {id = @Model.MaRuou})" class="btn btn-success btn-block">
+            Thêm vào giỏ
+        </a>
+    </div>
+</div>
+

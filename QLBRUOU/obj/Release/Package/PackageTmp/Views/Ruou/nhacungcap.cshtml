@@ -1,0 +1,14 @@
+﻿@model IEnumerable<QLBRUOU.Models.NHACUNGCAP>
+
+@foreach (var item in Model)
+{
+    <div class="nn-megamenu-sidebar">
+        <ul>
+            <li>
+                <a href="@Url.Action("SPTheoNCC", "Ruou", new {id = item.MaNCC})">
+                    <span class="col-md-9"><h5><strong>@item.TenNCC</strong></h5></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+}

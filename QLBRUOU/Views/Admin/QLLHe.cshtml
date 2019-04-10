@@ -1,0 +1,70 @@
+﻿@model PagedList.PagedList<QLBRUOU.Models.LIENHE>
+@using PagedList;
+@using QLBRUOU.Models;
+@using PagedList.Mvc
+
+<!-- using Helper HTML to cut to shorter description -->
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+@{
+    ViewBag.Title = "QLLHe";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ LIÊN HỆ</h2>
+
+<table class="table" border="1px">
+    <tr>
+        <th style="width: 300px">TÊN</th>
+        <th style="width: 300px">ĐỊA CHỈ</th>
+        <th style="width: 300px">SỐ ĐIỆN THOẠI</th>
+        <th style="width: 300px">TIN NHẮN</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TenLH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.DiaChiLH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.SDThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TNhan)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@* Making page list *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLLHe", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@model QLBRUOU.Models.XUATXU
+
+@{
+    ViewBag.Title = "xoanxx";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+
+<h3>Bạn có chắc muốn xóa nhà xuất xứ này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên nhà xuất xứ:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenXXu)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại danh sách", "Nhaxuatxu")
+        </div>
+    }
+</div>
+
+
+
+

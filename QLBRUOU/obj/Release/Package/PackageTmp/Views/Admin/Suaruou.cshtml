@@ -1,0 +1,142 @@
+﻿@model QLBRUOU.Models.RUOU
+
+@{
+    ViewBag.Title = "Suaruou";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Suaruou</h2>
+
+
+@using (Html.BeginForm("Suaruou", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        <h3>SỬA THÔNG TIN RƯỢU</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model=> model.MaRuou)
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.MaRuou,  new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div style="font:18px; padding: 5px 0 0 5px">
+                    @Model.MaRuou
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.HiddenFor(model => model.MaRuou)
+            @Html.LabelFor(model => model.TenRuou, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenRuou, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenRuou, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.Giaban, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Giaban, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Giaban, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.Mota, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mota, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.AnhRuou, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">Chọn ảnh mới
+                <img src="@Url.Content("~/Images/" + Model.AnhRuou)" width="120" />(Ảnh hiện tại)
+                @Html.TextBox("ImageP", ViewData["Image"], new { @class="disabled"})
+                <br />
+                <input type="file" name="NewImageP" id="NewImage" value="Browse" />
+                @Html.ValidationMessageFor(model => model.AnhRuou, "", new { @class = "text-danger" })
+                <h2>@ViewBag.Thongbao</h2>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.NgayCapNhat, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                <input type="date" name="sel_date" value="Ngaycapnhat" />
+                @Html.ValidationMessageFor(model => model.NgayCapNhat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.SoLuongTon, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoLuongTon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoLuongTon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.MaLoaiRuou, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaLoaiRuou")
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.MaXXu, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaXXu")
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="form-group col-md-8 col-lg-8">
+            @Html.LabelFor(model => model.MaNCC, htmlAttributes: new { @class = "control-label col-md-2 col-lg-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaNCC")
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Lưu" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại danh sách", "Ruou")
+</div>

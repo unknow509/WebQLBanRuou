@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 contact_tren">
+        <h3>ĐỊA CHỈ - LIÊN HỆ</h3>
+        @using (Html.BeginForm("Guithongtin", "Lienhe", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-md-6 form-line">
+                <div class="form-group">
+                    <label for="exampleInputUsername">Tên</label>
+                    <input type="text" class="form-control" name="TenLH">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Địa chỉ Email</label>
+                    <input type="email" class="form-control" name="DiaChiLH">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Số điện thoại</label>
+                    <input type="tel" class="form-control" name="SDThoai">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Tin nhắn</label>
+                    <textarea class="form-control" name="TNHan"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>Gửi tin nhắn</button>
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <div class="col-md-12 bando_duoi">
+        <div class="col-md-5">
+            <h4><b>TÊN CÔNG TY:</b> Stuhrling </h4>
+            <h4><b>SỐ ĐIỆN THOẠI:</b> 090919090 </h4>
+            <h4><b>EMAIL:</b> supperman0903@gmail.com</h4>
+            <h4><b>ĐỊA CHỈ:</b> số 6 P. Bình Trưng Tây Quận 2 </h4>
+            <div>
+                <iframe style="background-size:cover;background-position: center center;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStuhrling-2285757528412873%2F&tabs=timeline&width=500&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="auto" height="150" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div>
+                <!-- Load Facebook SDK for JavaScript -->
+                <div id="fb-root"></div>
+                <script>
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            xfbml: true,
+                            version: 'v3.2'
+                        });
+                    };
+                    (function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                <!-- Your customer chat code -->
+                <div class="fb-customerchat"
+                     attribution=setup_tool
+                     page_id="2285757528412873"
+                     theme_color="#ff66a3"
+                     logged_in_greeting="Rượu ngon phải có bạn hiền. Muốn mua rượu của Stuhrling thì bạn phải có tiền."
+                     logged_out_greeting="Rượu ngon phải có bạn hiền. Muốn mua rượu của Stuhrling thì bạn phải có tiền.">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var uluru = { lat: 10.808703, lng: 106.716694 };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 16,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+                }
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2U_dCsYw9D4jk7YZT9u-bkd66Lm98UZc&callback=initMap">
+            </script>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-line {
+        border-right: 1px solid #B29999;
+    }
+
+    .form-group {
+        margin-top: 10px;
+    }
+
+    label {
+        font-size: 1.3em;
+        line-height: 1em;
+        font-weight: normal;
+    }
+
+    .form-control {
+        font-size: 1.3em;
+        color: #080808;
+    }
+
+    textarea.form-control {
+        height: 135px;
+    }
+
+    .submit {
+        font-size: 1.1em;
+        float: right;
+        width: 150px;
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .bando_duoi {
+        margin-top: 20px;
+    }
+
+    .contact_tren {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+    }
+</style>
+

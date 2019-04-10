@@ -1,0 +1,78 @@
+﻿
+@model PagedList.PagedList<QLBRUOU.Models.KHACHHANG>
+@using PagedList;
+@using QLBRUOU.Models;
+@using PagedList.Mvc
+
+<!-- using Helper HTML to cut to shorter description -->
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+@{
+    ViewBag.Title = "QLNguoidung";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h2>
+
+<table class="table" border="1px">
+    <tr>
+        <th style="width: 300px">TÊN KHÁCH HÀNG </th>
+        <th style="width: 300px">TÀI KHOẢN </th>
+        <th style="width: 300px">MẬT KHẨU </th>
+        <th style="width: 300px">EMAIL </th>
+        <th style="width: 300px">ĐỊA CHỈ  </th>
+        <th style="width: 300px">ĐIỆN THOẠI</th>
+        <th style="width: 300px">NGÀY SINH </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => @item.HoTen)
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => @item.TaiKhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.DiaChiKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.DienThoaiKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.NgaySinh)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@* Making page list *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLNguoidung", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+
+
+

@@ -1,0 +1,71 @@
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+  
+
+/************************/
+/**** MAIN STRUCTURE ****/
+/************************/
+
+#nav{position:relative;left:0px;float:left;width:960px;height:30px;paddding:0px 26px; margin:0px;box-shadow:0px 0px 10px 0px rgba(22,21,0,27);-webkit-box-shadow: 0 0 15px rgba(22,21,17,.27);-moz-box-shadow: 0 0 15px rgba(22,21,17,.27);}
+#nav li{float:left;position:relative;margin:4px 25px;
+}
+
+#nav li a{padding:0px 15px 0px 0px;font-size:larger;}
+
+#nav a {    
+    float: left;
+    position: relative;
+    font-size: 14px;
+    text-transform: uppercase;}	
+#nav .dropmenu-columns{
+display:none;
+background-color:#fafcfe;
+position: absolute;
+top: 20px;
+z-index: 1000;
+box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+padding: 25px 0px;}
+#nav li a:hover{color:#09f; text-decoration:none;}
+
+#nav li:hover .dropmenu-columns{display:block;float:left;}
+
+/******** dropdown-menu-BRAND********/
+
+#dm-brands{height:auto;width:650px;}
+.spec-list{float:left;position:relative;height:100%;width:200px;margin:4px;
+}
+.brandcolumn{height:100%;width:200px;float:left;position:relative;margin:4px;font-size:8px;}
+.dont_miss{height:100%;width:200px;float:left;position:relative;}
+h2{text-transform:uppercase;font-size:14px;color:#09f; border-bottom:1px dashed blue;}
+
+/******dropdown-menu-MEN-WATCHES********/
+#dm-men-watches{height:auto;width:750px;}
+.dm-prices{float:left;position:relative;height:100%;width:240px;margin:4px;}
+.dm-watches-style{height:100%;width:200px;float:left;margin:4px;}
+.dm-popular-brands{height:100%;width:250px;float:left;margin:4px;}
+
+/******dropdown-menu-WOMMEN-WATCHES********/
+
+#dm-women-watches{height:auto;width:639px;}
+
+
+/****dropdown menu- special offers****/
+#dm-special-offers{height:auto;width:400px;}
+
+/**infomation***/
+#dm-infomation{height:auto;width:362px;}
+.infomation{width:270px;float:left;margin:4px;}
+
+

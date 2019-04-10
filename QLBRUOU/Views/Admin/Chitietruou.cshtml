@@ -1,0 +1,83 @@
+﻿@model QLBRUOU.Models.RUOU
+
+@{
+    ViewBag.Title = "Chitietruou";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT RƯỢU</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Tên rượu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenRuou)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+        <dd>
+            @String.Format("{0:0,0}", Model.Giaban) VNĐ
+        </dd>
+
+        <dt>
+            Mô tả:
+        </dt>
+        <dd style="width:600px;text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            Ảnh rượu:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Images/"+ Model.AnhRuou)" width="120px" />
+        </dd>
+
+        <dt>
+            Ngày cập nhật:
+        </dt>
+        <dd>
+            @String.Format("{0:MM/dd/yyyy}", Model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            Số lượng tồn:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            Xuất xứ:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.XUATXU.TenXXu)
+        </dd>
+
+        <dt>
+           Nhà cung cấp:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NHACUNGCAP.TenNCC)
+        </dd>
+
+        <dt>
+           Loại rượu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PHANLOAI.Loairuou)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa thông tin rượu", "Suaruou", new { id = Model.MaRuou }) |
+    @Html.ActionLink("Trở về danh sách", "Ruou")
+</p>

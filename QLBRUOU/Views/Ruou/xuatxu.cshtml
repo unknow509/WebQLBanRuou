@@ -1,0 +1,16 @@
+﻿@model IEnumerable<QLBRUOU.Models.XUATXU>
+
+
+@foreach (var item in Model)
+{
+    <div class="nn-megamenu-sidebar">
+        <ul>
+            <li>
+                <a href="@Url.Action("SPTheoXX", "Ruou", new {id = item.MaXXu})"><i class="icon-chevron-right"></i>
+                    <span class="col-md-9"><h5><strong>@item.TenXXu</strong></h5></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
